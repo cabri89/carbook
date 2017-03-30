@@ -2,28 +2,26 @@
 
 namespace AppBundle\Entity\Common;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * Class IdTrait
- */
+* Class IdTrait
+*/
 trait IdTrait
 {
-    /**
-     * @var int
-     * @ORM\Id()
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
+  /**
+  * @var int
+  * @MongoDB\Id
+  */
+  private $id;
 
-    /**
-     * Get Id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+  /**
+  * Get Id
+  *
+  * @return int
+  */
+  public function getId()
+  {
+    return $this->id;
+  }
 }
