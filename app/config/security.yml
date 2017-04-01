@@ -5,12 +5,12 @@ security:
         - { path: ^/compte, roles: ROLE_USER }
         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
     encoders:
-        AppBundle\Entity\User: bcrypt
+        AppBundle\Document\User: bcrypt
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
         our_db_provider:
             entity:
-                class: AppBundle\Entity\User
+                class: AppBundle\Document\User
                 property: username
         in_memory:
             memory: ~

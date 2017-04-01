@@ -3,7 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Form\UserType;
-use AppBundle\Entity\User;
+use AppBundle\Document\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,7 +29,7 @@ class RegistrationController extends Controller
             $user->setPassword($password);
 
             // 4) save the User!
-            $em = $this->getDoctrine()->getManager();
+            $em = $this->get('doctrine_mongodb')->getManager();
             $em->persist($user);
             $em->flush();
 
